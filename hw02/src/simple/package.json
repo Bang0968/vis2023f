@@ -1,0 +1,14 @@
+{
+  "name": "c6948327de842777",
+  "main": "c6948327de842777@66.js",
+  "version": "66.0.0",
+  "homepage": "https://observablehq.com/d/c6948327de842777",
+  "author": {
+    "name": "vis2023f's Workspace",
+    "url": "https://observablehq.com/@vis2023f-ws"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}
