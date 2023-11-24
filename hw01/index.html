@@ -178,14 +178,55 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      該次作業程式碼，請放在 https://github.com/<span style="color:red;">你的帳號</span>/vis2023f/hw<span style="color:red;">01</span>/src/ 檔案夾。
+      Simple Baseline (產生 Dummy CSV 虛構成績表)程式碼，請放在 https://github.com/<span style="color:red;">你的帳號</span>/vis2023f/hw<span style="color:red;">01</span>/src-easy/<br>
+      <hr>
+      Medium Baseline (繪製 v3 蘋果成績表)程式碼，請放在 https://github.com/<span style="color:red;">你的帳號</span>/vis2023f/hw<span style="color:red;">01</span>/src-medium-v3/<br>
+      <hr>
+      Medium Baseline (繪製 v7 蘋果成績表)程式碼，請放在 https://github.com/<span style="color:red;">你的帳號</span>/vis2023f/hw<span style="color:red;">01</span>/src-medium-v7/<br>
+      <hr>
+      Strong Baseline (繪製嶄新的成績表)程式碼，請放在 https://github.com/<span style="color:red;">你的帳號</span>/vis2023f/hw<span style="color:red;">01</span>/src-strong/<br>
+    </div>
+  </div>
+
+  
+  <!-- ------------------------------------------------>
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      打開作品集資料夾 (GitHub 倉庫 vis2023f 傳送門) 
+      <hr>
+      <input type="button" name="back" onclick="location.href='https://github.com/Bang0968/vis2023f/'" value="按我  ٩(｡・ω・｡)و   前往倉庫"> 
     </div>
   </div>
 
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。
+      <h4>前往 GitHub Pages 網頁 (GitHub Pages vis2023f 傳送門) </h4>
+    </div>
+  </div>
+
+  <!-- ------------------------------------------------>
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      <a href="https://Bang0968.github.io/vis2023f/hw01/src-easy">https://Bang0968.github.io/vis2023f/hw01/src-easy/index.html</a>
+      <hr>
+      <a href="https://Bang0968.github.io/vis2023f/hw01/src-medium-v3">https://Bang0968.github.io/vis2023f/hw01/src-medium-v3/index.html</a>
+      <hr>
+      <a href="https://Bang0968.github.io/vis2023f/hw01/src-medium-v7">https://Bang0968.github.io/vis2023f/hw01/src-medium-v7/index.html</a>
+    </div>
+  </div>
+
+  <!-- ------------------------------------------------>
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      <h3>心得報告(100字)</h3>
+    </div>
+  </div>
+
+  <!-- ------------------------------------------------>
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      這次的作業讓我初步了解了D3.js的基本操作，在處理不同版本的D3.js時可能碰到的問題，是一個實用的經驗。版本之間的函數差異確實可能讓人花費一些時間去理解和解決，但這也讓我學會了更靈活地應對技術變化，這對未來的學習和應用都是有益的。D3畫廊提供了許多創新的呈現方式，雖然目前我難以想像在成績呈現上應用的具體場景，但這也反映出我在這方面的想像力還有待豐富。或許隨著對D3.js更深入的瞭解，我能夠發現更多適用於成績呈現的創新方式。
     </div>
   </div>
 
@@ -200,33 +241,89 @@
           <th>分項描述</th>
         </tr>
         <tr>
-          <td rowspan="7" id="myTotal"></td>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
+          <td rowspan="4" id="myTotal"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox1" checked></td>
           <td id='m1'>2</td>
-          <td>Simple baseline - 描述、描述、描述</td>
+          <td>Simple baseline - 產生 Dummy CSV 虛構成績表</td>
         </tr>
         <tr>
           <td><input type="checkbox" class="flipswitch" id="myCheckbox2" checked></td>
-          <td id='m2'>6</td>
-          <td>Medium baseline - 描述、描述、描述 </td>
+          <td id='m2'>2</td>
+          <td>Medium baseline - 繪製 v3 蘋果成績表</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox3"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox3" checked></td>
           <td id='m3'>2</td>
-          <td>Strong baseline - 描述、描述、描述 </td>
+          <td>Medium baseline - 繪製 v7 蘋果成績表</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox4" checked></td>
+          <td id='m4'>4</td>
+          <td>Strong baseline - 繪製嶄新的成績表</td>
         </tr>
       </table>
+    </div>
+  </div>
+
+
+  <!-- ------------------------------------------------>
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      <h4>Simple baseline - 產生 Dummy CSV 虛構成績表</h4>
     </div>
   </div>
 
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      <video id="video1" style="width:100%;max-width:100%;" controls="">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-      </video>
+      <iframe width="100%" height="500" frameborder="0" style="background-color: #FFFFFF" src="./src-easy/index.html"></iframe>
     </div>
   </div>
+
+  <!-- ------------------------------------------------>
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      <h4>Medium baseline - 繪製 v3 蘋果成績表</h4>
+    </div>
+  </div>
+
+  <!-- ------------------------------------------------>
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      <iframe width="100%" height="500" frameborder="0" style="background-color: #FFFFFF" src="./src-medium-v3/index.html"></iframe>
+    </div>
+  </div>
+
+
+  <!-- ------------------------------------------------>
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      <h4>Medium baseline - 繪製 v7 蘋果成績表</h4>
+    </div>
+  </div>
+
+  <!-- ------------------------------------------------>
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      <iframe width="100%" height="500" frameborder="0" style="background-color: #FFFFFF" src="./src-medium-v7/index.html"></iframe>
+    </div>
+  </div>
+
+
+  <!-- ------------------------------------------------>
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      <h4>Strong baseline - 繪製嶄新的成績表</h4>
+    </div>
+  </div>
+
+  <!-- ------------------------------------------------>
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      <iframe width="100%" height="500" frameborder="0" style="background-color: #FFFFFF" src="./src-strong/index.html"></iframe>
+    </div>
+  </div>
+
 
   <!-- ------------------------------------------------>
 
@@ -245,9 +342,6 @@
   d3.select("#myCheckbox2").on("change",update);
   d3.select("#myCheckbox3").on("change",update);
   d3.select("#myCheckbox4").on("change",update);
-  d3.select("#myCheckbox5").on("change",update);
-  d3.select("#myCheckbox6").on("change",update);
-  d3.select("#myCheckbox7").on("change",update);
 
   update();
   
@@ -265,6 +359,10 @@
 
     if (d3.select("#myCheckbox3").property("checked")){
       score += parseInt(d3.select('#m3').html());   
+    }
+
+    if (d3.select("#myCheckbox4").property("checked")){
+      score += parseInt(d3.select('#m4').html());   
     }
 
     d3.select("#myTotal").html(score);    
