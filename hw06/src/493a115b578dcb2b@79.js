@@ -1,5 +1,5 @@
 function _1(md){return(
-md`# HW6 Simple baseline (3pt)`
+md`# HW6`
 )}
 
 function _2(md){return(
