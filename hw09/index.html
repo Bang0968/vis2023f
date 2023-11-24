@@ -153,13 +153,27 @@
     from { background-position:0 100%; }
     to { background-position:20px 100%; }
   }
+  .aspect-ratio {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56%;
+  }
+  .aspect-ratio iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+
   /* 波浪 */
 </style>
 </head>
 <body>
 <!-- https://alexlenail.me/NN-SVG/about.html -->
-<a href="https://tjhsieh.github.io/c/vis/vis2023f/syllabus/index.html" class="github-corner" aria-label="View source on Github">
-  <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#f9eced; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+<a href="https://github.com/Wenshin1109/vis2023f" class="github-corner" aria-label="View source on Github">
+  <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#000; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
     <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
     <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="#f9eced" stroke="#6A4C9C" style="transform-origin: 130px 106px;" class="octo-arm"></path>
     <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="#f9eced" stroke="#6A4C9C" class="octo-body"></path>
@@ -178,14 +192,21 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      該次作業程式碼，請放在 https://github.com/<span style="color:red;">你的帳號</span>/vis2023f/hw<span style="color:red;">09</span>/src/ 檔案夾。
+      打開src資料夾
+        <input type="button" name="back" onclick="location.href='https://github.com/Bang0968/vis2023f/tree/main/hw09/src'" value="按我٩(｡・ω・｡)و">
     </div>
   </div>
 
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。
+      <h3>心得報告(105字)</h3>
+    </div>
+  </div>
+
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      這次作業讓我了到如何使用 VIBE 將影片人物動作轉換成動作檔以後再匯入到 Unity 製作動作檔，最後將動作檔套入到虛擬人物中，過程非常耗時間，尤其在環境建置上面，透過此作業讓我充分了解到製作虛擬人物並加入動作的辛苦之處。
     </div>
   </div>
 
@@ -201,34 +222,102 @@
         </tr>
         <tr>
           <td rowspan="7" id="myTotal"></td>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
-          <td id='m1'>2</td>
-          <td>Simple baseline - 描述、描述、描述</td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox1" checked></td>
+          <td id='m1'>1</td>
+          <td>Simple baseline - 在場景中加入虛擬解說員</td>
         </tr>
         <tr>
           <td><input type="checkbox" class="flipswitch" id="myCheckbox2" checked></td>
-          <td id='m2'>6</td>
-          <td>Medium baseline - 描述、描述、描述 </td>
+          <td id='m2'>1</td>
+          <td>Simple baseline - 繳交預演版影片與音檔</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox3"></td>
-          <td id='m3'>2</td>
-          <td>Strong baseline - 描述、描述、描述 </td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox3" checked></td>
+          <td id='m3'>1</td>
+          <td>Simple baseline - 繳交正式版影片與音檔</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox4" checked></td>
+          <td id='m4'>3</td>
+          <td>Medium baseline - 虛擬解說員進行解說</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox5" checked></td>
+          <td id='m5'>2</td>
+          <td>Medium baseline - 繳交左右對照影片</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox6"></td>
+          <td id='m6'>2</td>
+          <td>Strong baseline - 加入臉部表情：眨眼、動嘴巴 </td>
         </tr>
       </table>
     </div>
   </div>
 
   <!-- ------------------------------------------------>
+
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      <video id="video1" style="width:100%;max-width:100%;" controls="">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-      </video>
+       <h4>Simple baseline - 在場景中加入虛擬解說員與畫作</h4>
+    </div>
+  </div>
+
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+       <img style="width:100%;max-width:100%;" src="./src/unityScreen.png">
+    </div>
+  </div>
+
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+       <h4>Simple baseline - 繳交預演版影片 <input type="checkbox" class="flipswitch" checked></h4>
+       <h4>Simple baseline - 繳交正式版影片 <input type="checkbox" class="flipswitch" checked></h4>
     </div>
   </div>
 
   <!-- ------------------------------------------------>
+
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+       <h4>Medium baseline - 虛擬解說員進行解說</h4>
+    </div>
+  </div>
+
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      <video id="video1" style="width:100%;max-width:100%;" controls="">
+        <source src="./src/111598057_Unity.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+       <h4>Medium baseline - 虛實左右對照影片</h4>
+    </div>
+  </div>
+
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      <video id="video1" style="width:100%;max-width:100%;" controls="">
+        <source src="./src/111598057_Compare.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+  <!-- ------------------------------------------------>
+
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+       <h4>Strong baseline - 加入臉部表情：眨眼、動嘴巴</h4>
+    </div>
+  </div>
+
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+        好懶
+    </div>
+  </div>
 
   <!-- ------------------------------------------------>
 
@@ -247,7 +336,6 @@
   d3.select("#myCheckbox4").on("change",update);
   d3.select("#myCheckbox5").on("change",update);
   d3.select("#myCheckbox6").on("change",update);
-  d3.select("#myCheckbox7").on("change",update);
 
   update();
   
@@ -265,6 +353,17 @@
 
     if (d3.select("#myCheckbox3").property("checked")){
       score += parseInt(d3.select('#m3').html());   
+    }
+    if (d3.select("#myCheckbox4").property("checked")){
+      score += parseInt(d3.select('#m4').html());
+    }
+
+    if (d3.select("#myCheckbox5").property("checked")){
+      score += parseInt(d3.select('#m5').html());   
+    }
+
+    if (d3.select("#myCheckbox6").property("checked")){
+      score += parseInt(d3.select('#m6').html());   
     }
 
     d3.select("#myTotal").html(score);    
