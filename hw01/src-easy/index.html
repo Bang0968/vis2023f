@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <style>
+        table, th, td {
+            border: 1px solid rgb(0, 255, 145);
+            margin: 10px auto;
+            padding: 1px 3px;
+        }
+    </style>
+</head>
+<body>
+    <br><br>
+    <button type="button" onclick="tableToCSV()">
+        download CSV
+    </button>
+    <script>
+        function checkIsExist(data, str, pos) {
+            for(let student in data) {
+                if(student[pos] == str) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        title = ['序號', '班級', '學號', '姓名', 'GitHub',
+            '作業一', '作業二', '作業三', '作業四', '作業五', '作業六', '作業七', '作業八', '作業九', '作業十'];
+        className = ['資工系', '資工所', '電資AI', '電資資安', '創新AI']
+        classNumber = ['590', '598', 'C52', 'C53', 'C71']
+        yearNumber = ['111', '112']
+        
+        data = [title];
+
+        // generate 120 random students
+        for(var i = 1 ; i <= 120 ; i++) {
+            yearIndex = Math.floor(Math.random() * 5);
+            rows = [i, className[yearIndex]];
+
+            // number, ref : prof example
+            let number = 0;
+            do {
+                number = yearNumber[Math.floor(Math.random() * 2)] + classNumber[yearIndex] + String(Math.floor(Math.random() * 999) + 1).padStart(3, '0');
+            } while(checkIsExist(data, number, 2));
+            rows.push(number);
+
+            // name, ref : prof example
+            let name = '';
+            do {
+                name = String.fromCharCode(Math.floor(Math.random() * 0x51ff + 0x4e00)) +
+                        String.fromCharCode(Math.floor(Math.random() * 0x51ff + 0x4e00)) +
+                        String.fromCharCode(Math.floor(Math.random() * 0x51ff + 0x4e00));
+            } while(checkIsExist(data, name, 3));
+            rows.push(name);
+            
+            // github id, ref : https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
+            let github = '';
+            do {
+                github = (Math.random() + 1).toString(36).substring(2)
+            } while(checkIsExist(data, github, 4));
+            rows.push(github);
+
+            // hw score
+            for (var j = 0; j < 10; j++) {
+                rows.push(Math.floor(Math.random() * 10));
+            }
+            data.push(rows);
+        }
+
+        // setup table, ref : https://medium.com/wdstack/quick-blurb-generating-a-table-from-an-array-in-javascript-41386fd449a9
+        let table = document.createElement('table');
+        for (let row of data) {
+            table.insertRow();
+            for (let cell of row) {
+                let newCell = table.rows[table.rows.length - 1].insertCell();
+                newCell.textContent = cell;
+            }
+        }
+        document.body.appendChild(table);
+
+        // download csv, ref : prof example
+        function tableToCSV() {
+            var csv_data = [];
+            var rows = document.getElementsByTagName('tr');
+            for (var i = 0; i < rows.length; i++) {
+                var cols = rows[i].querySelectorAll('td,th');
+                var csvrow = [];
+                for (var j = 0; j < cols.length; j++) {
+                    csvrow.push(cols[j].innerHTML);
+                }
+                csv_data.push(csvrow.join(","));
+            }
+            csv_data = csv_data.join('\n');
+            downloadCSVFile(csv_data);
+        }
+ 
+        function downloadCSVFile(csv_data) {
+            // fix chinese charset encode problem, ref : https://www.cnblogs.com/moluy/p/14096490.html
+            CSVFile = new Blob(["\ufeff" + csv_data], {
+                type: "text/csv, charset=UTF-8"
+            });
+            var temp_link = document.createElement('a');
+            temp_link.download = "data.csv";
+            var url = window.URL.createObjectURL(CSVFile);
+            temp_link.href = url;
+            temp_link.style.display = "none";
+        
+            document.body.appendChild(temp_link);
+            temp_link.click();
+            document.body.removeChild(temp_link);
+        }
+    </script>
+</body>
+</html>
