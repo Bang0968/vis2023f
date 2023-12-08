@@ -1,0 +1,14 @@
+{
+  "name": "4d67529694e0470f",
+  "main": "4d67529694e0470f@36.js",
+  "version": "36.0.0",
+  "homepage": "https://observablehq.com/d/4d67529694e0470f",
+  "author": {
+    "name": "北科大-王子權's Workspace",
+    "url": "https://observablehq.com/@vis2023f-ws"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}
